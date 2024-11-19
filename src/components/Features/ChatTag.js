@@ -1,4 +1,4 @@
-import { ArrowsPointingOutIcon, CheckCircleIcon, CheckIcon, ChevronDownIcon, ChevronRightIcon, FolderIcon, FolderOpenIcon, MinusCircleIcon, PencilSquareIcon, PhotoIcon, PlusCircleIcon, StopIcon, TrashIcon } from '@heroicons/react/24/outline'
+import { ArrowsPointingOutIcon, PencilSquareIcon, PhotoIcon, TrashIcon } from '@heroicons/react/24/outline'
 import Layout from '../Layout/Layout';
 import React, { useState } from 'react';
 import { ReactSortable } from "react-sortablejs";

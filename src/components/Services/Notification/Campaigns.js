@@ -307,7 +307,7 @@ export default function Campaigns() {
                                             <td className="px-3 py-5 text-right text-sm text-gray-500 sm:table-cell">{project.clicked}</td>
                                             <td className="py-5 pl-3 pr-4 text-right text-sm text-gray-500">{project.ctr}</td>
                                             <td className="py-5 pl-3 pr-8 text-right text-xs text-gray-500">
-                                                <a href="#" className="text-red-600 font-semibold uppercase hover:text-red-900">
+                                                <a href="/" className="text-red-600 font-semibold uppercase hover:text-red-900">
                                                     Edit
                                                 </a>
                                             </td>
@@ -319,13 +319,13 @@ export default function Campaigns() {
                         <div className="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
                             <div className="flex flex-1 justify-between sm:hidden">
                                 <a
-                                    href="#"
+                                    href="/"
                                     className="relative inline-flex items-center rounded-2xl border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-slate-50"
                                 >
                                     Previous
                                 </a>
                                 <a
-                                    href="#"
+                                    href="/"
                                     className="relative ml-3 inline-flex items-center rounded-2xl border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-slate-50"
                                 >
                                     Next
@@ -341,7 +341,7 @@ export default function Campaigns() {
                                 <div>
                                     <nav aria-label="Pagination" className="isolate inline-flex p-4">
                                         <a
-                                            href="#"
+                                            href="/"
                                             className="relative inline-flex items-center rounded-l-3xl px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-slate-50 focus:z-20 focus:outline-offset-0"
                                         >
                                             <span className="sr-only">Previous</span>
@@ -349,20 +349,20 @@ export default function Campaigns() {
                                         </a>
                                         {/* Current: "z-10 bg-red-600 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600", Default: "text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-slate-50 focus:outline-offset-0" */}
                                         <a
-                                            href="#"
+                                            href="/"
                                             aria-current="page"
                                             className="relative z-10 inline-flex items-center bg-red-600 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
                                         >
                                             1
                                         </a>
                                         <a
-                                            href="#"
+                                            href="/"
                                             className="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-slate-50 focus:z-20 focus:outline-offset-0"
                                         >
                                             2
                                         </a>
                                         <a
-                                            href="#"
+                                            href="/"
                                             className="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-slate-50 focus:z-20 focus:outline-offset-0 md:inline-flex"
                                         >
                                             3
@@ -371,25 +371,25 @@ export default function Campaigns() {
                                             ...
                                         </span>
                                         <a
-                                            href="#"
+                                            href="/"
                                             className="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-slate-50 focus:z-20 focus:outline-offset-0 md:inline-flex"
                                         >
                                             8
                                         </a>
                                         <a
-                                            href="#"
+                                            href="/"
                                             className="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-slate-50 focus:z-20 focus:outline-offset-0"
                                         >
                                             9
                                         </a>
                                         <a
-                                            href="#"
+                                            href="/"
                                             className="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-slate-50 focus:z-20 focus:outline-offset-0"
                                         >
                                             10
                                         </a>
                                         <a
-                                            href="#"
+                                            href="/"
                                             className="relative inline-flex items-center rounded-r-3xl px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-slate-50 focus:z-20 focus:outline-offset-0"
                                         >
                                             <span className="sr-only">Next</span>

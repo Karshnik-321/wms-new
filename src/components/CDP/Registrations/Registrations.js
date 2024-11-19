@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { ChevronLeftIcon, ChevronRightIcon, UserGroupIcon, CursorArrowRippleIcon, ArrowLeftStartOnRectangleIcon, ChevronUpDownIcon, CheckIcon, AdjustmentsHorizontalIcon, AdjustmentsVerticalIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline'
+import { ChevronLeftIcon, ChevronRightIcon, UserGroupIcon, CursorArrowRippleIcon, ArrowLeftStartOnRectangleIcon, ChevronUpDownIcon, CheckIcon, AdjustmentsVerticalIcon } from '@heroicons/react/24/outline'
 import Layout from '../../Layout/Layout';
 import 'react-quill/dist/quill.snow.css';
-import { Dialog, DialogBackdrop, DialogPanel, DialogTitle, Label, Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@headlessui/react';
+import { Dialog, DialogBackdrop, DialogPanel, Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@headlessui/react';
 
   const registrations = [
     {
@@ -346,13 +346,13 @@ export default function Registrations() {
                                 <div className="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
                                     <div className="flex flex-1 justify-between sm:hidden">
                                         <a
-                                            href="#"
+                                            href="/"
                                             className="relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-slate-50"
                                         >
                                             Previous
                                         </a>
                                         <a
-                                            href="#"
+                                            href="/"
                                             className="relative ml-3 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-slate-50"
                                         >
                                             Next
@@ -368,7 +368,7 @@ export default function Registrations() {
                                         <div>
                                             <nav aria-label="Pagination" className="isolate inline-flex p-4">
                                                 <a
-                                                    href="#"
+                                                    href="/"
                                                     className="relative inline-flex items-center rounded-l-full px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-slate-50 focus:z-20 focus:outline-offset-0"
                                                 >
                                                     <span className="sr-only">Previous</span>
@@ -376,20 +376,20 @@ export default function Registrations() {
                                                 </a>
                                                 {/* Current: "z-10 bg-red-600 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600", Default: "text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-slate-50 focus:outline-offset-0" */}
                                                 <a
-                                                    href="#"
+                                                    href="/"
                                                     aria-current="page"
                                                     className="relative z-10 inline-flex items-center bg-red-600 px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
                                                 >
                                                     1
                                                 </a>
                                                 <a
-                                                    href="#"
+                                                    href="/"
                                                     className="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-slate-50 focus:z-20 focus:outline-offset-0"
                                                 >
                                                     2
                                                 </a>
                                                 <a
-                                                    href="#"
+                                                    href="/"
                                                     className="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-slate-50 focus:z-20 focus:outline-offset-0 md:inline-flex"
                                                 >
                                                     3
@@ -398,25 +398,25 @@ export default function Registrations() {
                                                     ...
                                                 </span>
                                                 <a
-                                                    href="#"
+                                                    href="/"
                                                     className="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-slate-50 focus:z-20 focus:outline-offset-0 md:inline-flex"
                                                 >
                                                     8
                                                 </a>
                                                 <a
-                                                    href="#"
+                                                    href="/"
                                                     className="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-slate-50 focus:z-20 focus:outline-offset-0"
                                                 >
                                                     9
                                                 </a>
                                                 <a
-                                                    href="#"
+                                                    href="/"
                                                     className="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-slate-50 focus:z-20 focus:outline-offset-0"
                                                 >
                                                     10
                                                 </a>
                                                 <a
-                                                    href="#"
+                                                    href="/"
                                                     className="relative inline-flex items-center rounded-r-full px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-slate-50 focus:z-20 focus:outline-offset-0"
                                                 >
                                                     <span className="sr-only">Next</span>

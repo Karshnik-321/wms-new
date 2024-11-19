@@ -9,12 +9,7 @@ import { Bars3Icon,
   ChevronDownIcon,
   UserIcon,} from '@heroicons/react/24/outline'
 import { useState } from 'react'
-const user = {
-    name: 'Admin',
-    email: 'admin@gmail.com',
-    imageUrl:
-      'https://wms.jnm.digital/assests/images/logo-icon.png',
-  }
+
   const navigation = [
     { 
       name: 'Features',
@@ -80,7 +75,7 @@ const user = {
   const userNavigation = [
     { name: 'My Account', href: '#' },
     { name: 'Change Password', href: '#' },
-    { name: 'Logout', href: '#' },
+    { name: 'Logout', href: '/login' },
   ]
   
   const domain = [
@@ -235,7 +230,7 @@ function LayoutHeader(props) {
           <div className="fixed inset-0 z-10" />
           <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
-              <a href="#" className="-m-1.5 p-1.5">
+              <a href="/" className="-m-1.5 p-1.5">
                 <span className="sr-only">WMS</span>
                 <a href='/'> <svg className="h-6 w-16 sm:h-8 sm:w-20"><use href="#wms"></use></svg></a>
               </a>

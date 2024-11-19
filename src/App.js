@@ -9,6 +9,7 @@ import Listing from './components/AiHub/Webstories/Listing';
 import Registrations from './components/CDP/Registrations/Registrations';
 import ProgressBar from './components/Global/ProgressBar';
 import Demographics from './components/CDP/Registrations/Demographics';
+import Login from './pages/Login';
 
 
 const RouteChangeLoader = ({ setLoading }) => {
@@ -44,6 +45,7 @@ function App() {
         <RouteChangeLoader setLoading={setIsLoading} />
         <Routes>
           <Route path="/" element={<Dashboard />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/features/header" element={<Header />} />
           <Route path="/features/chat-tag" element={<ChatTag />} />
           <Route path="/products/astrology/horoscope" element={<Horoscope />} />

@@ -1,13 +1,28 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  html, body {
+    font-family: "Inter", system-ui, sans-serif;
+    font-weight: 500;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body { margin: 0; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+code { font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace; }
+.gamelist{ transition: all 0.1s ease-in; padding: 50px 20px; border: solid rgba(255, 255, 255, 0.50) 1px; background-color: rgba(255, 255, 255, 0.70); border-radius: 20px;}
+.gamelist:hover{ box-shadow:0 0 20px rgb(51 51 51 / 10%); background-color: rgba(255, 255, 255); }
+.gamelist:nth-child(5n){ border-right-width:0; }
+.gamelist:nth-last-child(-n+5){ border-bottom-width: 0; }
+@media only screen and (max-width: 780px) {
+  .gamelist{padding:30px 20px;}
+  .gamelist:nth-child(4n){ border-right: solid rgba(255, 255, 255, 0.40) 1px;}
+  .gamelist:nth-child(2n){ border-right-width: 0; }
+  .gamelist:nth-last-child(-n+5){ border-bottom: solid rgba(255, 255, 255, 0.5) 1px;}
+  .gamelist:nth-last-child(-n+2){ border-bottom-width: 0; }
 }
+.gradient { filter: blur(150px); top: 0px; right: 0px; left: 0px; pointer-events: none; z-index: -100; position: fixed; min-height: 100%; opacity: 1; }
+/* quil editor */
+.quill-editor .ql-container { height: 20em; overflow-y: auto; }
+.quill-editor .ql-editor { line-height: 2; color: black; }
+.progress-bar { height: 2px; background-color: #dc2626; transition: width 0.2s ease; position: fixed; top: 0; left: 0; z-index: 9999; }

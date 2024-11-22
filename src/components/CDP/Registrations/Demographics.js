@@ -54,7 +54,7 @@ import Chart from 'react-google-charts';
   };
 
   export const PieHoleOption  = {
-    pieHole: 0.5,
+    pieHole: 0.56,
     is3D: false,
     legend: {
       position: "top",
@@ -64,8 +64,36 @@ import Chart from 'react-google-charts';
         fontSize: 10,
       },
     },
+    chartArea: {
+        left: 10,
+        right: 10, // !!! works !!!
+        bottom: 20,  // !!! works !!!
+        top: 20,
+        width: "100%",
+        height: "100%"
+    }
   };
 
+  export const GenderOption  = {
+    pieHole: 0.6,
+    is3D: false,
+    legend: {
+      position: "right",
+      alignment: "center",
+      textStyle: {
+        color: "#233238",
+        fontSize: 10,
+      },
+    },
+    chartArea: {
+        left: 10,
+        right: 10, // !!! works !!!
+        bottom: 20,  // !!! works !!!
+        top: 20,
+        width: "100%",
+        height: "100%"
+    }
+  };
   export const GenderDemographicsData = [
     ["Element", "Density", { role: "style" }],
     ["Male", 1876, "#06b0f0"], // RGB value
@@ -73,6 +101,18 @@ import Chart from 'react-google-charts';
     ["Not Disclosed", 128014, "gray"],
   ];
 
+
+  const AgeDemographicsOptions = {
+    chartArea: {
+        left: 80,
+        right: 30, // !!! works !!!
+        bottom: 50,  // !!! works !!!
+        top: 30,
+        width: "80%",
+        height: "80%"
+    },
+    legend: 'none',
+  };
   export const AgeDemographicsData = [
     ["Element", "Density", { role: "style" }],
     ["Under 24", 244, "#093c5d"], // RGB value
@@ -100,6 +140,110 @@ import Chart from 'react-google-charts';
     ["google", 85974],
     ["mobile", 59727],
   ];
+
+export const DeviceData = [
+    [
+        "Element",
+        "Device Trafic",
+        { role: "style" },
+        {
+            role: "annotation",
+            type: "string",
+        },
+    ],
+    ["Mobile", 25.94, "#2c95ec", "Mobile"],
+    ["Desktop", 5.49, "#f64d2a", "Web"],
+    ["App", 10, "#f6ba2a", "App"],
+];
+export const DeviceOptions = {
+    title: "Device Trafic",
+    bar: { groupWidth: "60%" },
+    legend: { position: "none" },
+    chartArea: {
+        left: 10,
+        right: 10, // !!! works !!!
+        bottom: 20,  // !!! works !!!
+        top: 20,
+        width: "100%",
+        height: "100%"
+    }
+};
+
+export const SignupData = [
+    ["Year", "Mobile", "Web", "App"],
+    ["2004", 1000, 400, 300],
+    ["2005", 1170, 460, 560],
+    ["2006", 660, 1120, 500],
+    ["2007", 1030, 540, 1240],
+  ];
+  
+  export const SignupOptions = {
+    curveType: "function",
+    legend: { position: "bottom" },
+    chartArea: {
+        left: 80,
+        right: 40, // !!! works !!!
+        bottom: 80,  // !!! works !!!
+        top: 30,
+        width: "100%",
+        height: "100%"
+    }
+  };
+
+  const HourlyTrendData = [
+    ['Time of Day', 'Motivation Level'],
+    [{ v: [8, 0, 0], f: '8 am' }, 1],
+    [{ v: [9, 0, 0], f: '9 am' }, 2],
+    [{ v: [10, 0, 0], f: '10 am' }, 3],
+    [{ v: [11, 0, 0], f: '11 am' }, 4],
+    [{ v: [12, 0, 0], f: '12 pm' }, 5],
+    [{ v: [13, 0, 0], f: '1 pm' }, 6],
+    [{ v: [14, 0, 0], f: '2 pm' }, 7],
+    [{ v: [15, 0, 0], f: '3 pm' }, 8],
+    [{ v: [16, 0, 0], f: '4 pm' }, 9],
+    [{ v: [17, 0, 0], f: '5 pm' }, 10],
+  ];
+
+  const HourlyTrendOptions = {
+    chartArea: {
+        left: 50,
+        right: 30, // !!! works !!!
+        bottom: 50,  // !!! works !!!
+        top: 30,
+        width: "80%",
+        height: "80%"
+    },
+    legend: 'none',
+  };
+
+
+  const UserBounceData = [
+    ['X', 'Dogs'],
+    [0, 0],   [1, 10],  [2, 23],  [3, 17],  [4, 18],  [5, 9],
+    [6, 11],  [7, 27],  [8, 33],  [9, 40],  [10, 32], [11, 35],
+    [12, 30], [13, 40], [14, 42], [15, 47], [16, 44], [17, 48],
+    [18, 52], [19, 54], [20, 42], [21, 55], [22, 56], [23, 57],
+    [24, 60], [25, 50], [26, 52], [27, 51], [28, 49], [29, 53],
+    [30, 55], [31, 60], [32, 61], [33, 59], [34, 62], [35, 65],
+    [36, 62], [37, 58], [38, 55], [39, 61], [40, 64], [41, 65],
+    [42, 63], [43, 66], [44, 67], [45, 69], [46, 69], [47, 70],
+    [48, 72], [49, 68], [50, 66], [51, 65], [52, 67], [53, 70],
+    [54, 71], [55, 72], [56, 73], [57, 75], [58, 70], [59, 68],
+    [60, 64], [61, 60], [62, 65], [63, 67], [64, 68], [65, 69],
+    [66, 70], [67, 72], [68, 75], [69, 80]
+  ];
+
+  const UserBounceOptions = {
+    chartArea: {
+        left: 50,
+        right: 30, // !!! works !!!
+        bottom: 50,  // !!! works !!!
+        top: 30,
+        width: "80%",
+        height: "80%"
+    },
+    legend: 'none',
+  };
 export default function Demographics() {
     return (
         <Layout>
@@ -109,21 +253,14 @@ export default function Demographics() {
                 
                 <div className="mx-auto max-w-7xl my-6">
                     <div className='text-gray-50 bg-white rounded-2xl shadow-lg overflow-hidden'>
-                        <div class="grid grid-cols-1 sm:grid-cols-3">
-                            <div class="col-span-2 border-r">
-                                <div className="px-6 lg:px-8 py-4 lg:py-6 flex items-center md:justify-between border-b border-gray-200">
-                                    <div className="min-w-0 flex-1">
-                                        <h2 className="text-xl/7 lg:text-2xl/7 font-bold text-gray-900 sm:truncate sm:text-2xl sm:tracking-tight">
-                                            Demographics
-                                        </h2>
-                                    </div>
-                                </div>
-                                <div className="mx-auto px-10 py-4">
-                                    <dl className="grid gap-2 grid-cols-1 lg:grid-cols-2">
+                        <div class="py-2">
+                            <div class="col-span-3 border-r">
+                                <div className="mx-auto px-10 pt-10">
+                                    <dl className="grid grid-cols-3 bg-gray-50 rounded-2xl">
                                         {stats.map((item) => (
                                             <div
                                                 key={item.id}
-                                                className="relative px-4 py-4 overflow-hidden bg-white first:border-r"
+                                                className="relative px-10 py-6 overflow-hidden border-r last:border-r-0 border-gray-200"
                                             >
                                                 <div className='flex items-center'>
                                                     <div className='mr-4'>
@@ -157,41 +294,54 @@ export default function Demographics() {
                                     </dl> */}
                                 </div>
                             </div>
-                            <div class="bg-white border-b">
-                                <div className='border-b'>
-                                    <Chart
-                                        chartType="PieChart"
-                                        width="100%"
-                                        height="220px"
-                                        data={TotalUsersData}
-                                        options={TotalUsersOption}
-                                    />
-                                </div>
-                                <div className='overflow-scroll h-32'>
-                                    {tabs.map((item) => (
-                                        <div
-                                            key={item.id}
-                                            className="relative overflow-hidden bg-white px-4 py-4 sm:px-6 sm:py-2.5 border-r border-b"
-                                        >
-                                            <div className='flex justify-between items-center'>
-                                                <dd>
-                                                    <p className="truncate text-xs font-medium text-gray-500">{item.name}</p>
-                                                    <p className="text-lg font-bold text-gray-900">{item.stat}</p>
-                                                </dd>
-                                                <figure>
-                                                    <img src={item.image} alt="icon" className="w-6 h-6" />
-                                                </figure>
+                            <div className='grid grid-cols-1 sm:grid-cols-2 py-10'>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 items-center">
+                                    <div>
+                                        <Chart
+                                            chartType="PieChart"
+                                            width="100%"
+                                            height="250px"
+                                            data={TotalUsersData}
+                                            options={TotalUsersOption}
+                                        />
+                                    </div>
+                                    <div>
+                                        {tabs.map((item) => (
+                                            <div
+                                                key={item.id}
+                                                className="relative py-4 sm:py-2.5 border-b last:border-b-0 cursor-pointer"
+                                            >
+                                                <div className='flex justify-between items-center'>
+                                                    <dd>
+                                                        <p className="truncate text-xs font-medium text-gray-500">{item.name}</p>
+                                                        <p className="text-lg font-bold text-gray-900">{item.stat}</p>
+                                                    </dd>
+                                                    <figure>
+                                                        <img src={item.image} alt="icon" className="w-6 h-6" />
+                                                    </figure>
+                                                </div>
                                             </div>
-                                        </div>
-                                    ))}
+                                        ))}
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-center">
+                                    <div className="px-6">
+                                        <Chart
+                                            chartType="BarChart"
+                                            width="100%"
+                                            height="250px"
+                                            data={DeviceData}
+                                            options={DeviceOptions}
+                                        />
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="mx-auto max-w-7xl my-6">
-                    <div className='text-gray-50 bg-white rounded-2xl shadow-lg overflow-hidden'>
-                        <nav aria-label="Tabs" className="isolate flex divide-x divide-gray-200 ">
+                    <div className='grid gap-4'>
+                        {/* <nav aria-label="Tabs" className="isolate flex divide-x divide-gray-200 ">
                             {domaintabs.map((tab, tabIdx) => (
                                 <a
                                     key={tab.name}
@@ -214,25 +364,27 @@ export default function Demographics() {
                                     />
                                 </a>
                             ))}
-                        </nav>
-                        <div className='grid grid-cols-1 lg:grid-cols-2'>
-                            <div className='bg-white border'>
+                        </nav> */}
+                        <div className='grid gap-5 grid-cols-1 lg:grid-cols-2'>
+                            <div className='bg-white rounded-2xl shadow-lg overflow-hidden'>
                                 <div className="px-6 lg:px-8 py-4 lg:py-6 flex items-center md:justify-between border-b border-gray-200">
                                     <div className="min-w-0 flex-1">
                                         <h2 className="text-lg sm:text-xl font-bold text-gray-900">
-                                            Registrated User
+                                            Gender
                                         </h2>
                                     </div>
                                 </div>
-                                <Chart
-                                    chartType="ColumnChart"
-                                    width="100%"
-                                    height="300px"
-                                    data={GenderDemographicsData}
-                                    options={{legend:'none'}}
-                                />
+                                <div className='py-4'>
+                                    <Chart
+                                        chartType="PieChart"
+                                        width="100%"
+                                        height="280px"
+                                        data={GenderDemographicsData}
+                                        options={GenderOption}
+                                    />
+                                </div>
                             </div>
-                            <div className='bg-white border border-l-0'>
+                            <div className='bg-white rounded-2xl shadow-lg overflow-hidden'>
                                 <div className="px-6 lg:px-8 py-4 lg:py-6 flex items-center md:justify-between border-b border-gray-200">
                                     <div className="min-w-0 flex-1">
                                         <h2 className="text-lg sm:text-xl font-bold text-gray-900">
@@ -245,10 +397,10 @@ export default function Demographics() {
                                     width="100%"
                                     height="300px"
                                     data={AgeDemographicsData}
-                                    options={{legend:'none'}}
+                                    options={AgeDemographicsOptions}
                                 />
                             </div>
-                            <div className='bg-white border border-t-0'>
+                            <div className='bg-white rounded-2xl shadow-lg overflow-hidden'>
                                 <div className="px-6 lg:px-8 py-4 lg:py-6 flex items-center md:justify-between border-b border-gray-200">
                                     <div className="min-w-0 flex-1">
                                         <h2 className="text-lg sm:text-xl font-bold text-gray-900">
@@ -256,15 +408,17 @@ export default function Demographics() {
                                         </h2>
                                     </div>
                                 </div>
-                                <Chart
-                                    chartType="PieChart"
-                                    width="100%"
-                                    height="350px"
-                                    data={LoginSourceData}
-                                    options={PieHoleOption}
-                                />
+                                <div className='py-6'>
+                                    <Chart
+                                        chartType="PieChart"
+                                        width="100%"
+                                        height="350px"
+                                        data={LoginSourceData}
+                                        options={PieHoleOption}
+                                    />
+                                </div>
                             </div>
-                            <div className='bg-white border border-t-0 border-l-0'>
+                            <div className='bg-white rounded-2xl shadow-lg overflow-hidden'>
                                 <div className="px-6 lg:px-8 py-4 lg:py-6 flex items-center md:justify-between border-b border-gray-200">
                                     <div className="min-w-0 flex-1">
                                         <h2 className="text-lg sm:text-xl font-bold text-gray-900">
@@ -272,12 +426,65 @@ export default function Demographics() {
                                         </h2>
                                     </div>
                                 </div>
+                                <div className='py-6'>
+                                    <Chart
+                                        chartType="PieChart"
+                                        width="100%"
+                                        height="350px"
+                                        data={SignInMethodData}
+                                        options={PieHoleOption}
+                                    />
+                                </div>
+                            </div>
+                            <div className='bg-white rounded-2xl shadow-lg overflow-hidden'>
+                                <div className="px-6 lg:px-8 py-4 lg:py-6 flex items-center md:justify-between border-b border-gray-200">
+                                    <div className="min-w-0 flex-1">
+                                        <h2 className="text-lg sm:text-xl font-bold text-gray-900">
+                                            Sign Up Trend
+                                        </h2>
+                                    </div>
+                                </div>
                                 <Chart
-                                    chartType="PieChart"
+                                    chartType="LineChart"
                                     width="100%"
                                     height="350px"
-                                    data={SignInMethodData}
-                                    options={PieHoleOption}
+                                    data={SignupData}
+                                    options={SignupOptions}
+                                    legendToggle
+                                />
+                            </div>
+                            <div className='bg-white rounded-2xl shadow-lg overflow-hidden'>
+                                <div className="px-6 lg:px-8 py-4 lg:py-6 flex items-center md:justify-between border-b border-gray-200">
+                                    <div className="min-w-0 flex-1">
+                                        <h2 className="text-lg sm:text-xl font-bold text-gray-900">
+                                            User Bounce
+                                        </h2>
+                                    </div>
+                                </div>
+                                <Chart
+                                    chartType="LineChart"
+                                    width="100%"
+                                    height="350px"
+                                    data={UserBounceData}
+                                    options={UserBounceOptions}
+                                    legendToggle
+                                />
+                            </div>
+                            <div className='bg-white rounded-2xl shadow-lg overflow-hidden col-span-2'>
+                                <div className="px-6 lg:px-8 py-4 lg:py-6 flex items-center md:justify-between border-b border-gray-200">
+                                    <div className="min-w-0 flex-1">
+                                        <h2 className="text-lg sm:text-xl font-bold text-gray-900">
+                                            Hourly Trend
+                                        </h2>
+                                    </div>
+                                </div>
+                                <Chart
+                                    chartType="ColumnChart"
+                                    width="100%"
+                                    height="350px"
+                                    data={HourlyTrendData}
+                                    options={HourlyTrendOptions}
+                                    legendToggle
                                 />
                             </div>
                         </div>

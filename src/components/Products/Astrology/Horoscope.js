@@ -89,6 +89,18 @@ import QuillEditor from '../../Global/QuillEditor';
         imageAlt: "Pisces",
     },
   ]
+
+
+  const tabs = [
+    { name: 'Daily', current: true },
+    { name: 'Company', current: false },
+    { name: 'Team Members', current: false },
+    { name: 'Billing', current: false },
+  ]
+  
+  function classNames(...classes) {
+    return classes.filter(Boolean).join(' ')
+  }
 export default function Horoscope() {
     // State to manage the active tab
     const [activeTab, setActiveTab] = useState(0);
@@ -96,6 +108,15 @@ export default function Horoscope() {
     const handleTabClick = (index) => {
         setActiveTab(index);
     };
+
+    // State to manage the active tab
+    const [activeDescriptionTab, setActiveDescriptionTab] = useState(0);
+
+    const handleDescriptionTabClick = (index) => {
+        setActiveDescriptionTab(index);
+    };
+
+    
     return (
         <Layout>
             <main>
@@ -230,6 +251,32 @@ export default function Horoscope() {
                                                     <QuillEditor placeholder='Enter personality here...' />
                                                 </div>
                                             </div>
+                                        </div>
+                                        <div className="hidden sm:block">
+                                            <nav aria-label="Tabs" className="isolate flex divide-x divide-gray-200 rounded-lg shadow">
+                                                {tabs.map((tab, tabIdx) => (
+                                                    <a
+                                                        key={tab.name}
+                                                      
+                                                        aria-current={tab.current ? 'page' : undefined}
+                                                        className={classNames(
+                                                            tab.current ? 'text-gray-900' : 'text-gray-500 hover:text-gray-700',
+                                                            tabIdx === 0 ? 'rounded-l-lg' : '',
+                                                            tabIdx === tabs.length - 1 ? 'rounded-r-lg' : '',
+                                                            'group relative min-w-0 flex-1 overflow-hidden bg-white px-4 py-4 text-center text-sm font-medium hover:bg-gray-50 focus:z-10',
+                                                        )}
+                                                    >
+                                                        <span>{tab.name}</span>
+                                                        <span
+                                                            aria-hidden="true"
+                                                            className={classNames(
+                                                                tab.current ? 'bg-indigo-500' : 'bg-transparent',
+                                                                'absolute inset-x-0 bottom-0 h-0.5',
+                                                            )}
+                                                        />
+                                                    </a>
+                                                ))}
+                                            </nav>
                                         </div>
                                         <div className="grid grid-cols-1 gap-x-6 gap-y-8 mb-4">
                                             <div className="col-span-1">

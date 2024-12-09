@@ -1,8 +1,10 @@
-import React from 'react';
-import { UserGroupIcon, CursorArrowRippleIcon, ArrowLeftStartOnRectangleIcon } from '@heroicons/react/24/outline';
+import React, { useState } from 'react';
+import { UserGroupIcon, CursorArrowRippleIcon, ArrowLeftStartOnRectangleIcon, ChevronUpDownIcon, CheckIcon } from '@heroicons/react/24/outline';
 import Layout from '../../Layout/Layout'
 import 'react-quill/dist/quill.snow.css';
 import Chart from 'react-google-charts';
+import { Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@headlessui/react';
+import Datepicker from 'react-tailwindcss-datepicker';
 
   const stats = [
     { id: 1, name: 'Total Users', stat: '129,476', icon: UserGroupIcon, bg: 'bg-red-100', iconcolor: 'text-red-500' },
@@ -232,7 +234,20 @@ export const SignupData = [
     },
     legend: 'none',
   };
+
+  const domainlist = [
+    { id: '1', name: 'All Domain' },
+    { id: '2', name: 'HZ - Hindi' },
+    { id: '3', name: 'HZ - English' },
+    { id: '4', name: 'Jagran' },
+  ]
 export default function Demographics() {
+    const [selectedDomain, setSelectedDomain] = useState(domainlist[0])
+    // datepicker
+    const [dateValue, setDateValue] = useState({ 
+        startDate: null, 
+        endDate: null
+    });
     return (
         <Layout>
             
@@ -268,12 +283,74 @@ export default function Demographics() {
                     <div className='text-gray-50 bg-white rounded-2xl shadow-lg overflow-hidden'>
                         <div class="py-2">
                             <div class="col-span-3 border-r">
-                                <div className="mx-auto px-6 lg:px-10 pt-6 lg:pt-10">
-                                    <dl className="grid grid-cols-1 lg:grid-cols-3 bg-gray-50 rounded-2xl border border-gray-100">
+                                <div className="mx-auto">
+                                    <div className="px-8 py-6 flex flex-wrap lg:flex-nowrap items-center md:justify-between border-b border-gray-200">
+                                        <div className="min-w-full lg:min-w-0 flex-1 mb-4 lg:mb-0">
+                                            <h2 className="text-2xl/7 font-bold text-gray-900 sm:truncate sm:text-2xl sm:tracking-tight">
+                                                Demographics
+                                            </h2>
+                                        </div>
+                                        <div className="flex flex-wrap lg:flex-nowrap w-full lg:w-auto flex-shrink-0 md:ml-4 md:mt-0 items-center">
+                                            <div className='mr-0 lg:mr-4 w-full lg:w-40 mb-3 lg:mb-0'>
+                                                <Listbox value={selectedDomain} onChange={setSelectedDomain}>
+                                                    {/* <Label className="block text-sm/6 font-medium text-gray-900">Assigned to</Label> */}
+                                                    <div className="relative">
+                                                        <ListboxButton className="relative w-full cursor-default rounded-md bg-white py-2.5 pl-4 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-600 sm:text-sm/6">
+                                                            <span className="block truncate text-gray-600">{selectedDomain.name}</span>
+                                                            <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+                                                                <ChevronUpDownIcon aria-hidden="true" className="size-5 text-gray-400" />
+                                                            </span>
+                                                        </ListboxButton>
+
+                                                        <ListboxOptions
+                                                            transition
+                                                            className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-none data-[closed]:data-[leave]:opacity-0 data-[leave]:transition data-[leave]:duration-100 data-[leave]:ease-in sm:text-sm"
+                                                        >
+                                                            {domainlist.map((list) => (
+                                                                <ListboxOption
+                                                                    key={list.id}
+                                                                    value={list}
+                                                                    className="group relative cursor-default select-none py-2 pl-3 pr-9 text-gray-900 data-[focus]:bg-indigo-600 data-[focus]:text-white"
+                                                                >
+                                                                    <span className="block truncate font-normal group-data-[selected]:font-semibold">{list.name}</span>
+
+                                                                    <span className="absolute inset-y-0 right-0 flex items-center pr-4 text-indigo-600 group-data-[focus]:text-white [.group:not([data-selected])_&]:hidden">
+                                                                        <CheckIcon aria-hidden="true" className="size-5" />
+                                                                    </span>
+                                                                </ListboxOption>
+                                                            ))}
+                                                        </ListboxOptions>
+                                                    </div>
+                                                </Listbox>
+                                            </div>
+                                            <div className='mr-0 lg:mr-4 w-full lg:w-40 mb-3 lg:mb-0'>
+                                                <div className="border border-gray-300 rounded-md shadow-sm">
+                                                    <Datepicker
+                                                        primaryColor={"red"}
+                                                        value={dateValue}
+                                                        onChange={newValue => setDateValue(newValue)}
+                                                        showShortcuts={true}
+                                                        placeholder="Select date..."
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div className='w-full lg:w-20'>
+                                                <button
+                                                    type="button"
+                                                    // onClick={() => setOpenFilter(true)}
+                                                    className="w-full items-center text-center rounded-full bg-red-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
+                                                >
+                                                    {/* <AdjustmentsVerticalIcon aria-hidden="true" className="-ml-0.5 size-4" /> */}
+                                                    Apply
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <dl className="grid grid-cols-1 lg:grid-cols-3 bg-gray-50 border-b">
                                         {stats.map((item) => (
                                             <div
                                                 key={item.id}
-                                                className="relative px-6 lg:px-10 py-6 overflow-hidden border-b last:border-b-0 lg:border-b-0 lg:border-r lg:last:border-r-0 border-gray-100"
+                                                className="relative px-6 lg:px-10 py-6 overflow-hidden border-b last:border-b-0 lg:border-b-0 lg:border-r lg:last:border-r-0 border-gray-200"
                                             >
                                                 <div className='flex items-center'>
                                                     <div className='mr-4'>
@@ -322,7 +399,7 @@ export default function Demographics() {
                                             {tabs.map((item) => (
                                                 <div
                                                     key={item.id}
-                                                    className="relative py-4 sm:py-2.5 border-b last:border-b-0 cursor-pointer"
+                                                    className="relative py-4 sm:py-2.5 border-b last:border-b-0"
                                                 >
                                                     <div className='flex justify-between items-center'>
                                                         <dd>

@@ -28,7 +28,7 @@ export default function Dashboard() {
                 <h1 className="text-balance uppercase font-bold tracking-tight text-gray-900 text-2xl sm:text-4xl">
                   My Access
                 </h1>
-                <p className="mt-2 sm:mt-5 text-sm md:text-lg leading-6 font-normal text-gray-600">
+                <p className="mt-2 sm:mt-5 text-xs/5 lg:text-sm leading-0 lg:leading-6 font-normal text-gray-600">
                   Creating a dashboard is just one part of conveying information to consumers. Adding text on dashboards allows a story to be told alongside the data.
                 </p>
               </div>

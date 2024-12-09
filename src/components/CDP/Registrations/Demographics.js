@@ -5,9 +5,9 @@ import 'react-quill/dist/quill.snow.css';
 import Chart from 'react-google-charts';
 
   const stats = [
-    { id: 1, name: 'Total Users', stat: '129,476', icon: UserGroupIcon },
-    { id: 1, name: 'MAU', stat: '3,259', icon: CursorArrowRippleIcon },
-    { id: 1, name: 'Todays Sign-Ups', stat: '380', icon: ArrowLeftStartOnRectangleIcon },
+    { id: 1, name: 'Total Users', stat: '129,476', icon: UserGroupIcon, bg: 'bg-red-100', iconcolor: 'text-red-500' },
+    { id: 1, name: 'MAU', stat: '3,259', icon: CursorArrowRippleIcon, bg: 'bg-green-100', iconcolor: 'text-green-500' },
+    { id: 1, name: 'Todays Sign-Ups', stat: '380', icon: ArrowLeftStartOnRectangleIcon, bg: 'bg-purple-100', iconcolor: 'text-purple-500' },
 
   ]
   const tabs = [
@@ -16,18 +16,6 @@ import Chart from 'react-google-charts';
     { id: 1, name: 'JagranJosh', stat: '0', current: false, image: 'https://www.jagranimages.com/images/wms/jagran_english.svg', },
     { id: 1, name: 'OnlyMyHealth', stat: '0', current: false, image: 'https://www.jagranimages.com/images/wms/onlymyhealth.svg', },
   ]
-
-  const domaintabs = [
-    { id: 1, name: 'All', stat: '119,982', current: true },
-    { id: 1, name: 'Jagran', stat: '119,982', current: false },
-    { id: 1, name: 'HerZindagi', stat: '9,493', current: false },
-    { id: 1, name: 'JagranJosh', stat: '0', current: false },
-    { id: 1, name: 'OnlyMyHealth', stat: '0', current: false },
-  ]
-
-  function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
-  }
 
   export const TotalUsersData = [
     ["Total", "Total Users"],
@@ -251,28 +239,52 @@ export default function Demographics() {
             <main>
                 {/* <SubHeader tabs={tabs} /> */}
                 
-                <div className="mx-auto max-w-7xl my-6">
+                <div className="mx-auto max-w-7xl my-6 px-4 lg:px-0">
+                <div className='flex justify-center mb-6'>
+                        <nav className="flex divide-x divide-gray-200 rounded-lg shadow overflow-hidden">
+                            
+                            <a
+                                href="/cdp/registrations"
+                                className="text-gray-500 hover:text-gray-500 group relative min-w-0 flex-1 overflow-hidden bg-gray-50 hover:bg-gray-100 px-8 py-4 text-center text-sm font-bold uppercase focus:z-10"
+                            >
+                                <span>Registrations</span>
+                                <span
+                                    aria-hidden="true"
+                                    className="absolute inset-x-0 bottom-0 h-0.5"
+                                />
+                            </a>
+                            <a
+                                href="/cdp/registrations/demographics"
+                                className="text-gray-50 hover:text-gray-50 group relative min-w-0 flex-1 overflow-hidden bg-red-500 hover:bg-red-600 px-8 py-4 text-center text-sm font-bold uppercase focus:z-10"
+                            >
+                                <span>Demographics</span>
+                                <span
+                                    aria-hidden="true"
+                                    className="bg-red-500 absolute inset-x-0 bottom-0 h-0.5"
+                                />
+                            </a>
+                        </nav>
+                    </div>
                     <div className='text-gray-50 bg-white rounded-2xl shadow-lg overflow-hidden'>
                         <div class="py-2">
                             <div class="col-span-3 border-r">
-                                <div className="mx-auto px-10 pt-10">
-                                    <dl className="grid grid-cols-3 bg-gray-50 rounded-2xl">
+                                <div className="mx-auto px-6 lg:px-10 pt-6 lg:pt-10">
+                                    <dl className="grid grid-cols-1 lg:grid-cols-3 bg-gray-50 rounded-2xl border border-gray-100">
                                         {stats.map((item) => (
                                             <div
                                                 key={item.id}
-                                                className="relative px-10 py-6 overflow-hidden border-r last:border-r-0 border-gray-200"
+                                                className="relative px-6 lg:px-10 py-6 overflow-hidden border-b last:border-b-0 lg:border-b-0 lg:border-r lg:last:border-r-0 border-gray-100"
                                             >
                                                 <div className='flex items-center'>
                                                     <div className='mr-4'>
-                                                        <div className="rounded-full bg-red-50 p-5">
-                                                            <item.icon aria-hidden="true" className="h-8 w-8 text-gray-700" />
+                                                        <div className={`rounded-full p-5 ${item.bg}`}>
+                                                            <item.icon aria-hidden="true" className={`w-8 h-8 ${item.iconcolor}`} />
                                                         </div>
                                                     </div>
                                                     <dd>
-                                                        <p className="truncate text-sm font-medium text-gray-500">{item.name}</p>
+                                                        <p className={`truncate text-sm font-medium text-gray-500`}>{item.name}</p>
                                                         <p className="text-3xl font-bold text-gray-900">{item.stat}</p>
                                                     </dd>
-                                                    
                                                 </div>
                                             </div>
                                         ))}
@@ -294,38 +306,40 @@ export default function Demographics() {
                                     </dl> */}
                                 </div>
                             </div>
-                            <div className='grid grid-cols-1 sm:grid-cols-2 py-10'>
-                                <div class="grid grid-cols-1 sm:grid-cols-2 items-center">
-                                    <div>
-                                        <Chart
-                                            chartType="PieChart"
-                                            width="100%"
-                                            height="250px"
-                                            data={TotalUsersData}
-                                            options={TotalUsersOption}
-                                        />
-                                    </div>
-                                    <div>
-                                        {tabs.map((item) => (
-                                            <div
-                                                key={item.id}
-                                                className="relative py-4 sm:py-2.5 border-b last:border-b-0 cursor-pointer"
-                                            >
-                                                <div className='flex justify-between items-center'>
-                                                    <dd>
-                                                        <p className="truncate text-xs font-medium text-gray-500">{item.name}</p>
-                                                        <p className="text-lg font-bold text-gray-900">{item.stat}</p>
-                                                    </dd>
-                                                    <figure>
-                                                        <img src={item.image} alt="icon" className="w-6 h-6" />
-                                                    </figure>
+                            <div className='grid grid-cols-1 lg:grid-cols-2 py-10'>
+                                <div className='col-span-1 px-6 lg:px-10'>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 items-center">
+                                        <div className='col-span-1'>
+                                            <Chart
+                                                chartType="PieChart"
+                                                width="100%"
+                                                height="250px"
+                                                data={TotalUsersData}
+                                                options={TotalUsersOption}
+                                            />
+                                        </div>
+                                        <div className='col-span-1'>
+                                            {tabs.map((item) => (
+                                                <div
+                                                    key={item.id}
+                                                    className="relative py-4 sm:py-2.5 border-b last:border-b-0 cursor-pointer"
+                                                >
+                                                    <div className='flex justify-between items-center'>
+                                                        <dd>
+                                                            <p className="truncate text-xs font-medium text-gray-500">{item.name}</p>
+                                                            <p className="text-lg font-bold text-gray-900">{item.stat}</p>
+                                                        </dd>
+                                                        <figure>
+                                                            <img src={item.image} alt="icon" className="w-6 h-6" />
+                                                        </figure>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        ))}
+                                            ))}
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="flex items-center justify-center">
-                                    <div className="px-6">
+                                <div class="flex items-center col-span-1'">
+                                    <div className="px-6 lg:px-10 w-full">
                                         <Chart
                                             chartType="BarChart"
                                             width="100%"
@@ -339,7 +353,7 @@ export default function Demographics() {
                         </div>
                     </div>
                 </div>
-                <div className="mx-auto max-w-7xl my-6">
+                <div className="mx-auto max-w-7xl my-6 px-4 lg:px-0">
                     <div className='grid gap-4'>
                         {/* <nav aria-label="Tabs" className="isolate flex divide-x divide-gray-200 ">
                             {domaintabs.map((tab, tabIdx) => (
@@ -470,7 +484,7 @@ export default function Demographics() {
                                     legendToggle
                                 />
                             </div>
-                            <div className='bg-white rounded-2xl shadow-lg overflow-hidden col-span-2'>
+                            <div className='bg-white rounded-2xl shadow-lg overflow-hidden col-span-1 lg:col-span-2'>
                                 <div className="px-6 lg:px-8 py-4 lg:py-6 flex items-center md:justify-between border-b border-gray-200">
                                     <div className="min-w-0 flex-1">
                                         <h2 className="text-lg sm:text-xl font-bold text-gray-900">

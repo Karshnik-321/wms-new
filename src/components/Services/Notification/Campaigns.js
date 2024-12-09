@@ -48,10 +48,10 @@ import { Dialog, DialogBackdrop, DialogPanel, Listbox, ListboxButton, ListboxOpt
       
   ]
   const stats = [
-    { id: 1, name: 'Total Subscribers', stat: '82374', icon: UserPlusIcon, change: '+4.75%', changeType: 'positive' },
-    { id: 2, name: 'Total Notification Sent', stat: '29453', icon: PaperAirplaneIcon, change: '+54.02%', changeType: 'negative' },
-    { id: 3, name: 'Total Clicked', stat: '4935', icon: ArrowUpLeftIcon, change: '-1.39%', changeType: 'positive' },
-    { id: 4, name: 'CTR', stat: '16.76%', icon: PercentBadgeIcon, change: '+10.18%', changeType: 'negative' },
+    { id: 1, name: 'Total Subscribers', stat: '82374', icon: UserPlusIcon, change: '+4.75%', changeType: 'positive', bg: 'bg-red-50', iconcolor: 'text-red-500' },
+    { id: 2, name: 'Total Notification Sent', stat: '29453', icon: PaperAirplaneIcon, change: '+54.02%', changeType: 'negative', bg: 'bg-green-50', iconcolor: 'text-green-500' },
+    { id: 3, name: 'Total Clicked', stat: '4935', icon: ArrowUpLeftIcon, change: '-1.39%', changeType: 'positive', bg: 'bg-purple-50', iconcolor: 'text-purple-500' },
+    { id: 4, name: 'CTR', stat: '16.76%', icon: PercentBadgeIcon, change: '+10.18%', changeType: 'negative', bg: 'bg-orange-50', iconcolor: 'text-orange-500' },
   ]
   const selecteYearData = [
     { id: 1, name: '2024' },
@@ -77,24 +77,26 @@ export default function Campaigns() {
                             key={item.id}
                             className="relative overflow-hidden px-4 sm:px-6 py-6 lg:py-10 border-r-0 lg:border-r border-b lg:border-b-0"
                         >
-                            <dt>
-                                <div className="absolute rounded-full border border-gray-300 p-4">
-                                    <item.icon aria-hidden="true" className="h-5 w-5 text-gray-700" />
+                            <div className='flex items-center'>
+                                <div className='mr-4'>
+                                    <div className={`rounded-full p-5 ${item.bg}`}>
+                                        <item.icon aria-hidden="true" className={`w-8 h-8 ${item.iconcolor}`} />
+                                    </div>
+                                    
                                 </div>
-                                <p className="truncate ml-16 text-xs lg:text-xs font-medium text-gray-500">{item.name}</p>
-                            </dt>
-                            <dd className="flex items-baseline justify-between">
-                                <p className="text-2xl ml-16 lg:text-3xl font-semibold text-gray-900">{item.stat}</p>
-                                <dd
-                                    className={classNames(
-                                        item.changeType === 'negative' ? 'text-rose-600' : 'text-gray-700',
-                                        'text-xs font-medium',
-                                    )}
-                                >
-                                    {item.change}
+                                <dd>
+                                    <p className="truncate text-xs lg:text-xs font-medium text-gray-500">{item.name}</p>
+                                    <p className="text-3xl font-bold text-gray-900">{item.stat}</p>
+                                    <dd
+                                        className={classNames(
+                                            item.changeType === 'negative' ? 'text-rose-600' : 'text-gray-700',
+                                            'text-xs font-medium',
+                                        )}
+                                    >
+                                        {item.change}
+                                    </dd>
                                 </dd>
-                            </dd>
-                            
+                            </div>
                         </div>
                     ))}
                 </dl>

@@ -10,6 +10,9 @@ import Registrations from './components/CDP/Registrations/Registrations';
 import ProgressBar from './components/Global/ProgressBar';
 import Demographics from './components/CDP/Registrations/Demographics';
 import Login from './pages/Login';
+import Anonymous from './components/CDP/Anonymous/Anonymous';
+import Categories from './components/CDP/Anonymous/Categories';
+import Registered from './components/CDP/Anonymous/Registered';
 
 
 const RouteChangeLoader = ({ setLoading }) => {
@@ -53,6 +56,9 @@ function App() {
           <Route path="/ai-hub/webstories/listing" element={<Listing />} />
           <Route path="/cdp/registrations" element={<Registrations />} />
           <Route path="/cdp/registrations/demographics" element={<Demographics />} />
+          <Route path="/cdp/anonymous" element={<Anonymous />} />
+          <Route path="/cdp/anonymous/registered" element={<Registered />} />
+          <Route path="/cdp/anonymous/cricket" element={<Categories />} />
         </Routes>
     </Router>
   );

@@ -309,7 +309,7 @@ export default function Registrations() {
                                                 </div>
                                             </Listbox>
                                         </div>
-                                        <div className='mr-0 lg:mr-4 w-full lg:w-40 mb-3 lg:mb-0'>
+                                        <div className='mr-0 lg:mr-4 w-full lg:w-64 mb-3 lg:mb-0'>
                                             <div className="border border-gray-300 rounded-md shadow-sm">
                                                 <Datepicker 
                                                     primaryColor={"red"}

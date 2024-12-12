@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { UserGroupIcon, CursorArrowRippleIcon, ArrowLeftStartOnRectangleIcon, ChevronUpDownIcon, CheckIcon, ArrowUpIcon } from '@heroicons/react/24/outline'
+import { UserGroupIcon, CursorArrowRippleIcon, ArrowLeftStartOnRectangleIcon, ChevronUpDownIcon, CheckIcon, ArrowUpIcon, ArrowDownIcon } from '@heroicons/react/24/outline'
 import Layout from '../../Layout/Layout';
 import 'react-quill/dist/quill.snow.css';
 import { Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@headlessui/react';
@@ -210,7 +210,7 @@ export default function Registered() {
                                             </div>
                                         </Listbox>
                                     </div>
-                                    <div className='mr-0 lg:mr-4 w-full lg:w-40 mb-3 lg:mb-0'>
+                                    <div className='mr-0 lg:mr-4 w-full lg:w-64 mb-3 lg:mb-0'>
                                         <div className="border border-gray-300 rounded-md shadow-sm">
                                             <Datepicker
                                                 primaryColor={"red"}
@@ -315,7 +315,7 @@ export default function Registered() {
                                     <div className="px-8 py-6 flex flex-wrap lg:flex-nowrap items-center md:justify-between border-b border-gray-200">
                                         <div className="min-w-full lg:min-w-0 flex-1 mb-4 lg:mb-0">
                                             <h2 className="text-2xl/7 font-bold text-gray-900 sm:truncate sm:text-2xl sm:tracking-tight">
-                                                Author
+                                                Top Authors
                                             </h2>
                                         </div>
                                     </div>
@@ -375,7 +375,7 @@ export default function Registered() {
                                     <div className="px-8 py-6 flex flex-wrap lg:flex-nowrap items-center md:justify-between border-b border-gray-200">
                                         <div className="min-w-full lg:min-w-0 flex-1 mb-4 lg:mb-0">
                                             <h2 className="text-2xl/7 font-bold text-gray-900 sm:truncate sm:text-2xl sm:tracking-tight">
-                                                Device
+                                                Platform
                                             </h2>
                                         </div>
                                     </div>
@@ -397,7 +397,13 @@ export default function Registered() {
                                                 <li className="flex justify-between gap-x-6 py-5">
                                                     <div className="min-w-0">
                                                         <p className="text-xs/5 font-semibold text-gray-400">Desktop User</p>
-                                                        <p className="mt-1 truncate text-3xl font-bold text-gray-700">120,654</p>
+                                                        <p className="mt-1 truncate text-3xl font-bold text-gray-700 mb-2">120,654</p>
+                                                        <div className='text-xs'>
+                                                            <span className='w-4 h-4 mr-1 bg-red-100 rounded-full inline-flex items-center justify-center'>
+                                                                <ArrowDownIcon aria-hidden="true" className="size-2 text-red-700" />
+                                                            </span>
+                                                            <span className='text-red-600'>12.08%</span> than last week
+                                                        </div>
                                                     </div>
                                                 </li>
                                             </ul>
@@ -421,7 +427,7 @@ export default function Registered() {
                                     <div className="px-8 py-6 flex flex-wrap lg:flex-nowrap items-center md:justify-between border-b border-gray-200">
                                         <div className="min-w-full lg:min-w-0 flex-1 mb-4 lg:mb-0">
                                             <h2 className="text-2xl/7 font-bold text-gray-900 sm:truncate sm:text-2xl sm:tracking-tight">
-                                                User
+                                                User Types
                                             </h2>
                                         </div>
                                     </div>

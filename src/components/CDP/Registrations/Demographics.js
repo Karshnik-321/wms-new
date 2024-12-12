@@ -128,7 +128,7 @@ import Datepicker from 'react-tailwindcss-datepicker';
   export const SignInMethodData = [
     ["Total", "Total Users"],
     ["google", 85974],
-    ["mobile", 59727],
+    ["phone number", 59727],
   ];
 
 export const DeviceData = [
@@ -241,8 +241,15 @@ export const SignupData = [
     { id: '3', name: 'HZ - English' },
     { id: '4', name: 'Jagran' },
   ]
+  const platformlist = [
+    { id: '1', name: 'All Platform' },
+    { id: '2', name: 'Desktop' },
+    { id: '3', name: 'Mobile' },
+    { id: '4', name: 'App' },
+  ]
 export default function Demographics() {
     const [selectedDomain, setSelectedDomain] = useState(domainlist[0])
+    const [selectedPlatform, setSelectedPlatform] = useState(platformlist[0])
     // datepicker
     const [dateValue, setDateValue] = useState({ 
         startDate: null, 
@@ -254,7 +261,7 @@ export default function Demographics() {
             <main>
                 {/* <SubHeader tabs={tabs} /> */}
                 
-                <div className="mx-auto max-w-7xl my-6 px-4 lg:px-0">
+                <div className="mx-auto max-w-7xl my-6 px-4 lg:px-4 xl:px-0">
                 <div className='flex justify-center mb-6'>
                         <nav className="flex divide-x divide-gray-200 rounded-lg shadow overflow-hidden">
                             
@@ -324,6 +331,38 @@ export default function Demographics() {
                                                 </Listbox>
                                             </div>
                                             <div className='mr-0 lg:mr-4 w-full lg:w-40 mb-3 lg:mb-0'>
+                                                <Listbox value={selectedPlatform} onChange={setSelectedPlatform}>
+                                                    {/* <Label className="block text-sm/6 font-medium text-gray-900">Assigned to</Label> */}
+                                                    <div className="relative">
+                                                        <ListboxButton className="relative w-full cursor-default rounded-md bg-white py-2.5 pl-4 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-600 sm:text-sm/6">
+                                                            <span className="block truncate text-gray-600">{selectedPlatform.name}</span>
+                                                            <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+                                                                <ChevronUpDownIcon aria-hidden="true" className="size-5 text-gray-400" />
+                                                            </span>
+                                                        </ListboxButton>
+
+                                                        <ListboxOptions
+                                                            transition
+                                                            className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-none data-[closed]:data-[leave]:opacity-0 data-[leave]:transition data-[leave]:duration-100 data-[leave]:ease-in sm:text-sm"
+                                                        >
+                                                            {platformlist.map((list) => (
+                                                                <ListboxOption
+                                                                    key={list.id}
+                                                                    value={list}
+                                                                    className="group relative cursor-default select-none py-2 pl-3 pr-9 text-gray-900 data-[focus]:bg-indigo-600 data-[focus]:text-white"
+                                                                >
+                                                                    <span className="block truncate font-normal group-data-[selected]:font-semibold">{list.name}</span>
+
+                                                                    <span className="absolute inset-y-0 right-0 flex items-center pr-4 text-indigo-600 group-data-[focus]:text-white [.group:not([data-selected])_&]:hidden">
+                                                                        <CheckIcon aria-hidden="true" className="size-5" />
+                                                                    </span>
+                                                                </ListboxOption>
+                                                            ))}
+                                                        </ListboxOptions>
+                                                    </div>
+                                                </Listbox>
+                                            </div>
+                                            <div className='mr-0 lg:mr-4 w-full lg:w-64 mb-3 lg:mb-0'>
                                                 <div className="border border-gray-300 rounded-md shadow-sm">
                                                     <Datepicker
                                                         primaryColor={"red"}
@@ -548,7 +587,7 @@ export default function Demographics() {
                                 <div className="px-6 lg:px-8 py-4 lg:py-6 flex items-center md:justify-between border-b border-gray-200">
                                     <div className="min-w-0 flex-1">
                                         <h2 className="text-lg sm:text-xl font-bold text-gray-900">
-                                            User Bounce
+                                            User Bounce Rate
                                         </h2>
                                     </div>
                                 </div>

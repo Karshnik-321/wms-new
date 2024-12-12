@@ -7,8 +7,8 @@ import { Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@headless
 import Datepicker from 'react-tailwindcss-datepicker';
 
   const stats = [
-    { id: 1, name: 'Total Users', stat: '129,476', icon: UserGroupIcon, bg: 'bg-red-100', iconcolor: 'text-red-500' },
-    { id: 1, name: 'MAU', stat: '3,259', icon: CursorArrowRippleIcon, bg: 'bg-green-100', iconcolor: 'text-green-500' },
+    { id: 1, name: 'Total Registered Users', stat: '129,476', icon: UserGroupIcon, bg: 'bg-red-100', iconcolor: 'text-red-500' },
+    { id: 1, name: 'Monthly Sign-ups', stat: '3,259', icon: CursorArrowRippleIcon, bg: 'bg-green-100', iconcolor: 'text-green-500' },
     { id: 1, name: 'Todays Sign-Ups', stat: '380', icon: ArrowLeftStartOnRectangleIcon, bg: 'bg-purple-100', iconcolor: 'text-purple-500' },
 
   ]
@@ -47,7 +47,7 @@ import Datepicker from 'react-tailwindcss-datepicker';
     pieHole: 0.56,
     is3D: false,
     legend: {
-      position: "top",
+      position: "right",
       alignment: "center",
       textStyle: {
         color: "#233238",
@@ -236,13 +236,13 @@ export const SignupData = [
   };
 
   const domainlist = [
-    { id: '1', name: 'All Domain' },
+    { id: '1', name: 'All Domains' },
     { id: '2', name: 'HZ - Hindi' },
     { id: '3', name: 'HZ - English' },
     { id: '4', name: 'Jagran' },
   ]
   const platformlist = [
-    { id: '1', name: 'All Platform' },
+    { id: '1', name: 'All Platforms' },
     { id: '2', name: 'Desktop' },
     { id: '3', name: 'Mobile' },
     { id: '4', name: 'App' },
@@ -496,38 +496,38 @@ export default function Demographics() {
                             ))}
                         </nav> */}
                         <div className='grid gap-5 grid-cols-1 lg:grid-cols-2'>
-                            <div className='bg-white rounded-2xl shadow-lg overflow-hidden'>
+                        <div className='bg-white rounded-2xl shadow-lg overflow-hidden'>
                                 <div className="px-6 lg:px-8 py-4 lg:py-6 flex items-center md:justify-between border-b border-gray-200">
                                     <div className="min-w-0 flex-1">
                                         <h2 className="text-lg sm:text-xl font-bold text-gray-900">
-                                            Gender
+                                            Sign Up Trend
                                         </h2>
                                     </div>
                                 </div>
-                                <div className='py-4'>
-                                    <Chart
-                                        chartType="PieChart"
-                                        width="100%"
-                                        height="280px"
-                                        data={GenderDemographicsData}
-                                        options={GenderOption}
-                                    />
-                                </div>
+                                <Chart
+                                    chartType="LineChart"
+                                    width="100%"
+                                    height="350px"
+                                    data={SignupData}
+                                    options={SignupOptions}
+                                    legendToggle
+                                />
                             </div>
                             <div className='bg-white rounded-2xl shadow-lg overflow-hidden'>
                                 <div className="px-6 lg:px-8 py-4 lg:py-6 flex items-center md:justify-between border-b border-gray-200">
                                     <div className="min-w-0 flex-1">
                                         <h2 className="text-lg sm:text-xl font-bold text-gray-900">
-                                            Age Demographics
+                                            User Bounce Rate
                                         </h2>
                                     </div>
                                 </div>
                                 <Chart
-                                    chartType="ColumnChart"
+                                    chartType="LineChart"
                                     width="100%"
-                                    height="300px"
-                                    data={AgeDemographicsData}
-                                    options={AgeDemographicsOptions}
+                                    height="350px"
+                                    data={UserBounceData}
+                                    options={UserBounceOptions}
+                                    legendToggle
                                 />
                             </div>
                             <div className='bg-white rounded-2xl shadow-lg overflow-hidden'>
@@ -570,34 +570,34 @@ export default function Demographics() {
                                 <div className="px-6 lg:px-8 py-4 lg:py-6 flex items-center md:justify-between border-b border-gray-200">
                                     <div className="min-w-0 flex-1">
                                         <h2 className="text-lg sm:text-xl font-bold text-gray-900">
-                                            Sign Up Trend
+                                            Gender
                                         </h2>
                                     </div>
                                 </div>
-                                <Chart
-                                    chartType="LineChart"
-                                    width="100%"
-                                    height="350px"
-                                    data={SignupData}
-                                    options={SignupOptions}
-                                    legendToggle
-                                />
+                                <div className='py-4'>
+                                    <Chart
+                                        chartType="PieChart"
+                                        width="100%"
+                                        height="280px"
+                                        data={GenderDemographicsData}
+                                        options={GenderOption}
+                                    />
+                                </div>
                             </div>
                             <div className='bg-white rounded-2xl shadow-lg overflow-hidden'>
                                 <div className="px-6 lg:px-8 py-4 lg:py-6 flex items-center md:justify-between border-b border-gray-200">
                                     <div className="min-w-0 flex-1">
                                         <h2 className="text-lg sm:text-xl font-bold text-gray-900">
-                                            User Bounce Rate
+                                            Age Demographics
                                         </h2>
                                     </div>
                                 </div>
                                 <Chart
-                                    chartType="LineChart"
+                                    chartType="ColumnChart"
                                     width="100%"
-                                    height="350px"
-                                    data={UserBounceData}
-                                    options={UserBounceOptions}
-                                    legendToggle
+                                    height="300px"
+                                    data={AgeDemographicsData}
+                                    options={AgeDemographicsOptions}
                                 />
                             </div>
                             <div className='bg-white rounded-2xl shadow-lg overflow-hidden col-span-1 lg:col-span-2'>

@@ -350,10 +350,10 @@ export default function Anonymous() {
                                                         <td className="px-3 py-4 text-sm text-gray-500 whitespace-nowrap">
                                                             <div className="flex items-center">
                                                                 <div className="size-11 shrink-0">
-                                                                    <a href='/' className='text-red-600 hover:text-red-700'><img alt="" src={person.image} className="size-11 rounded-full" /></a>
+                                                                    <a href='/cdp/anonymous/pragya-bharati' className='text-red-600 hover:text-red-700'><img alt="" src={person.image} className="size-11 rounded-full" /></a>
                                                                 </div>
                                                                 <div className="ml-4">
-                                                                    <div className="font-medium text-gray-900"><a href='/' className='text-red-600 hover:text-red-700'>{person.name}</a></div>
+                                                                    <div className="font-medium text-gray-900"><a href='/cdp/anonymous/pragya-bharati' className='text-red-600 hover:text-red-700'>{person.name}</a></div>
                                                                     <div className="mt-1 text-gray-500 text-xs">{person.email}</div>
                                                                     <div className="mt-1 text-gray-500 text-xs">{person.role}</div>
                                                                 </div>

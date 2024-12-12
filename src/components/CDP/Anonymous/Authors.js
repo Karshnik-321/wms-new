@@ -9,6 +9,7 @@ import Chart from 'react-google-charts';
   const categories = [
       {
           "id": "1",
+          "category": 'Cricket',
           "title": "AAP में किन विधायकों का कटा पत्ता? कई नए चेहरों पर भरोसा; देखें दूसरी लिस्ट में कौन कहां से लड़ेगा चुनाव",
           "url": "/new-delhi-city-ncr-delhi-vidhan-sabha-chunav-2025-three-mlas-and-many-leaders-tickets-canceled-in-second-list-of-aam-aadmi-party-23844934.html",
           "pv": 474627,
@@ -17,6 +18,7 @@ import Chart from 'react-google-charts';
       },
       {
           "id": "2",
+          "category": 'Cricket',
           "title": "AAP में किन विधायकों का कटा पत्ता? कई नए चेहरों पर भरोसा; देखें दूसरी लिस्ट में कौन कहां से लड़ेगा चुनाव",
           "url": "/new-delhi-city-ncr-delhi-vidhan-sabha-chunav-2025-three-mlas-and-many-leaders-tickets-canceled-in-second-list-of-aam-aadmi-party-23844934.html",
           "pv": 354634,
@@ -25,6 +27,7 @@ import Chart from 'react-google-charts';
       },
       {
           "id": "3",
+          "category": 'Cricket',
           "title": "AAP में किन विधायकों का कटा पत्ता? कई नए चेहरों पर भरोसा; देखें दूसरी लिस्ट में कौन कहां से लड़ेगा चुनाव",
           "url": "/new-delhi-city-ncr-delhi-vidhan-sabha-chunav-2025-three-mlas-and-many-leaders-tickets-canceled-in-second-list-of-aam-aadmi-party-23844934.html",
           "pv": 381550,
@@ -33,6 +36,7 @@ import Chart from 'react-google-charts';
       },
       {
           "id": "4",
+          "category": 'Spiritual',
           "title": "AAP में किन विधायकों का कटा पत्ता? कई नए चेहरों पर भरोसा; देखें दूसरी लिस्ट में कौन कहां से लड़ेगा चुनाव",
           "url": "/new-delhi-city-ncr-delhi-vidhan-sabha-chunav-2025-three-mlas-and-many-leaders-tickets-canceled-in-second-list-of-aam-aadmi-party-23844934.html",
           "pv": 244593,
@@ -41,6 +45,7 @@ import Chart from 'react-google-charts';
       },
       {
           "id": "5",
+          "category": 'Cricket',
           "title": "AAP में किन विधायकों का कटा पत्ता? कई नए चेहरों पर भरोसा; देखें दूसरी लिस्ट में कौन कहां से लड़ेगा चुनाव",
           "url": "/new-delhi-city-ncr-delhi-vidhan-sabha-chunav-2025-three-mlas-and-many-leaders-tickets-canceled-in-second-list-of-aam-aadmi-party-23844934.html",
           "pv": 266599,
@@ -49,6 +54,7 @@ import Chart from 'react-google-charts';
       },
       {
           "id": "6",
+          "category": 'Entertainment',
           "title": "AAP में किन विधायकों का कटा पत्ता? कई नए चेहरों पर भरोसा; देखें दूसरी लिस्ट में कौन कहां से लड़ेगा चुनाव",
           "url": "/new-delhi-city-ncr-delhi-vidhan-sabha-chunav-2025-three-mlas-and-many-leaders-tickets-canceled-in-second-list-of-aam-aadmi-party-23844934.html",
           "pv": 204319,
@@ -140,7 +146,7 @@ import Chart from 'react-google-charts';
     }
   };
   
-export default function Categories() {
+export default function Authors() {
     const [selectedDomain, setSelectedDomain] = useState(domainlist[0])
     const [openFilter, setOpenFilter] = useState(false)
     // datepicker
@@ -181,7 +187,7 @@ export default function Categories() {
                             <div className="px-8 py-6 flex flex-wrap lg:flex-nowrap items-center md:justify-between border-b border-gray-200">
                                 <div className="min-w-full lg:min-w-0 flex-1 mb-4 lg:mb-0">
                                     <h2 className="text-2xl/7 font-bold text-gray-900 sm:truncate sm:text-2xl sm:tracking-tight">
-                                        Cricket
+                                        Pragya Bharati
                                     </h2>
                                 </div>
                                 <div className="flex flex-wrap lg:flex-nowrap w-full lg:w-auto flex-shrink-0 md:ml-4 md:mt-0 items-center">
@@ -247,10 +253,13 @@ export default function Categories() {
                                             <th scope="col" className="py-3.5 pl-8 pr-3 text-left text-sm font-semibold text-gray-900">
                                                 ID
                                             </th>
-                                            <th scope="col" className="py-3.5 pl-8 pr-3 text-left text-sm font-semibold text-gray-900">
+                                            <th scope="col" className="py-3.5 pl-3 pr-3 text-left text-sm font-semibold text-gray-900">
+                                                Category
+                                            </th>
+                                            <th scope="col" className="py-3.5 pl-3 pr-3 text-left text-sm font-semibold text-gray-900">
                                                 Title
                                             </th>
-                                            <th scope="col" className="py-3.5 pl-8 pr-3 text-left text-sm font-semibold text-gray-900">
+                                            <th scope="col" className="py-3.5 pl-3 pr-3 text-left text-sm font-semibold text-gray-900">
                                                 URL
                                             </th>
                                             <th
@@ -274,6 +283,7 @@ export default function Categories() {
                                         {categories.map((project) => (
                                             <tr key={project.id} className="border-b border-gray-200 even:bg-slate-50">
                                                 <td className="py-4 pl-8 pr-3 text-sm text-gray-500">{project.id}</td>
+                                                <td className="px-3 py-4 text-sm text-gray-500">{project.category}</td>
                                                 <td className="px-3 py-4 text-sm text-gray-500">{project.title}</td>
                                                 <td className="px-3 py-4 text-sm text-gray-500">{project.url}</td>
                                                 <td className="px-3 py-4 text-sm text-gray-500 whitespace-nowrap">{project.pv}</td>

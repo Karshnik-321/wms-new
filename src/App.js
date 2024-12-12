@@ -13,6 +13,7 @@ import Login from './pages/Login';
 import Anonymous from './components/CDP/Anonymous/Anonymous';
 import Categories from './components/CDP/Anonymous/Categories';
 import Registered from './components/CDP/Anonymous/Registered';
+import Authors from './components/CDP/Anonymous/Authors';
 
 
 const RouteChangeLoader = ({ setLoading }) => {
@@ -59,6 +60,7 @@ function App() {
           <Route path="/cdp/anonymous" element={<Anonymous />} />
           <Route path="/cdp/anonymous/registered" element={<Registered />} />
           <Route path="/cdp/anonymous/cricket" element={<Categories />} />
+          <Route path="/cdp/anonymous/pragya-bharati" element={<Authors />} />
         </Routes>
     </Router>
   );

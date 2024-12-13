@@ -247,10 +247,10 @@ export default function Categories() {
                                             <th scope="col" className="py-3.5 pl-8 pr-3 text-left text-sm font-semibold text-gray-900">
                                                 ID
                                             </th>
-                                            <th scope="col" className="py-3.5 pl-8 pr-3 text-left text-sm font-semibold text-gray-900">
+                                            {/* <th scope="col" className="py-3.5 pl-8 pr-3 text-left text-sm font-semibold text-gray-900">
                                                 Title
-                                            </th>
-                                            <th scope="col" className="py-3.5 pl-8 pr-3 text-left text-sm font-semibold text-gray-900">
+                                            </th> */}
+                                            <th scope="col" className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900">
                                                 URL
                                             </th>
                                             <th
@@ -274,11 +274,11 @@ export default function Categories() {
                                         {categories.map((project) => (
                                             <tr key={project.id} className="border-b border-gray-200 even:bg-slate-50">
                                                 <td className="py-4 pl-8 pr-3 text-sm text-gray-500">{project.id}</td>
-                                                <td className="px-3 py-4 text-sm text-gray-500">{project.title}</td>
-                                                <td className="px-3 py-4 text-sm text-gray-500">{project.url}</td>
-                                                <td className="px-3 py-4 text-sm text-gray-500 whitespace-nowrap">{project.pv}</td>
-                                                <td className="px-3 py-4 text-left text-sm text-gray-500 sm:table-cell">{project.user}</td>
-                                                <td className="px-3 py-4 text-left text-sm text-gray-500 sm:table-cell">{project.pvuser}</td>
+                                                {/* <td className="px-3 py-4 text-sm text-gray-500">{project.title}</td> */}
+                                                <td className="px-3 py-4 text-sm text-gray-500 hover:text-blue-500"><a href={project.url}>{project.url}</a></td>
+                                                <td className="px-3 py-4 text-sm text-gray-500 whitespace-nowrap w-32">{project.pv}</td>
+                                                <td className="px-3 py-4 text-left text-sm text-gray-500 sm:table-cell w-32">{project.user}</td>
+                                                <td className="px-3 py-4 text-left text-sm text-gray-500 sm:table-cell w-32">{project.pvuser}</td>
                                                 {/* <td className="py-4 pl-3 pr-4 text-left text-sm text-gray-500">{project.age}</td> */}
                                             </tr>
                                         ))}

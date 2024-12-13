@@ -62,9 +62,9 @@ import Datepicker from 'react-tailwindcss-datepicker';
       },
   ]
   const stats = [
-    { id: 1, name: 'Total Registration', subname: 'All Users', stat: '129,301', substat: '129,301', icon: UserGroupIcon, change: '+4.75%', changeType: 'positive', bg: 'bg-red-50', iconcolor: 'text-red-500' },
-    { id: 2, name: 'Migrated User', subname: 'Piano Users', stat: '53,917', substat: '53,917', icon: CursorArrowRippleIcon, change: '+54.02%', changeType: 'negative', bg: 'bg-green-50', iconcolor: 'text-green-500' },
-    { id: 3, name: 'SSO', subname: 'All SSO Users', stat: '75,384', substat: '75,384', icon: ArrowLeftStartOnRectangleIcon, change: '-1.39%', changeType: 'positive', bg: 'bg-purple-50', iconcolor: 'text-purple-500' },
+    { id: 1, name: 'Total Registrations', subname: 'All Users', stat: '129,301', substat: '129,301', icon: UserGroupIcon, change: '+4.75%', changeType: 'positive', bg: 'bg-red-50', iconcolor: 'text-red-500' },
+    { id: 2, name: 'Migrated Users', subname: 'Piano Users', stat: '53,917', substat: '53,917', icon: CursorArrowRippleIcon, change: '+54.02%', changeType: 'negative', bg: 'bg-green-50', iconcolor: 'text-green-500' },
+    { id: 3, name: 'SSO Users', subname: 'All SSO Users', stat: '75,384', substat: '75,384', icon: ArrowLeftStartOnRectangleIcon, change: '-1.39%', changeType: 'positive', bg: 'bg-purple-50', iconcolor: 'text-purple-500' },
 
   ]
   const domainlist = [

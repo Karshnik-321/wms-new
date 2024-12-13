@@ -185,7 +185,12 @@ export default function Authors() {
                     <div className='text-gray-50 bg-white rounded-2xl shadow-lg'>
                         <div className="mx-auto">
                             <div className="px-8 py-6 flex flex-wrap lg:flex-nowrap items-center md:justify-between border-b border-gray-200">
-                                <div className="min-w-full lg:min-w-0 flex-1 mb-4 lg:mb-0">
+                                <div className="min-w-full lg:min-w-0 flex-1 mb-4 lg:mb-0 flex items-center">
+                                    <img
+                                        alt=""
+                                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                        className="inline-block size-8 rounded-full mr-2"
+                                    />
                                     <h2 className="text-2xl/7 font-bold text-gray-900 sm:truncate sm:text-2xl sm:tracking-tight">
                                         Pragya Bharati
                                     </h2>
@@ -256,9 +261,9 @@ export default function Authors() {
                                             <th scope="col" className="py-3.5 pl-3 pr-3 text-left text-sm font-semibold text-gray-900">
                                                 Category
                                             </th>
-                                            <th scope="col" className="py-3.5 pl-3 pr-3 text-left text-sm font-semibold text-gray-900">
+                                            {/* <th scope="col" className="py-3.5 pl-3 pr-3 text-left text-sm font-semibold text-gray-900">
                                                 Title
-                                            </th>
+                                            </th> */}
                                             <th scope="col" className="py-3.5 pl-3 pr-3 text-left text-sm font-semibold text-gray-900">
                                                 URL
                                             </th>
@@ -283,12 +288,12 @@ export default function Authors() {
                                         {categories.map((project) => (
                                             <tr key={project.id} className="border-b border-gray-200 even:bg-slate-50">
                                                 <td className="py-4 pl-8 pr-3 text-sm text-gray-500">{project.id}</td>
-                                                <td className="px-3 py-4 text-sm text-gray-500">{project.category}</td>
-                                                <td className="px-3 py-4 text-sm text-gray-500">{project.title}</td>
-                                                <td className="px-3 py-4 text-sm text-gray-500">{project.url}</td>
-                                                <td className="px-3 py-4 text-sm text-gray-500 whitespace-nowrap">{project.pv}</td>
-                                                <td className="px-3 py-4 text-left text-sm text-gray-500 sm:table-cell">{project.user}</td>
-                                                <td className="px-3 py-4 text-left text-sm text-gray-500 sm:table-cell">{project.pvuser}</td>
+                                                <td className="px-3 py-4 text-sm text-gray-500 w-32">{project.category}</td>
+                                                {/* <td className="px-3 py-4 text-sm text-gray-500">{project.title}</td> */}
+                                                <td className="px-3 py-4 text-sm text-gray-500 hover:text-blue-500"><a href={project.url}>{project.url}</a></td>
+                                                <td className="px-3 py-4 text-sm text-gray-500 whitespace-nowrap w-32">{project.pv}</td>
+                                                <td className="px-3 py-4 text-left text-sm text-gray-500 sm:table-cell w-32">{project.user}</td>
+                                                <td className="px-3 py-4 text-left text-sm text-gray-500 sm:table-cell w-32">{project.pvuser}</td>
                                                 {/* <td className="py-4 pl-3 pr-4 text-left text-sm text-gray-500">{project.age}</td> */}
                                             </tr>
                                         ))}

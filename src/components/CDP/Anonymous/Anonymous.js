@@ -439,7 +439,7 @@ export default function Anonymous() {
                                                     <div className="min-w-0">
                                                         <p className="text-sm/5 font-semibold text-gray-700 flex items-center">
                                                             <span className='w-2 h-2 rounded-full bg-red-500 flex mr-2'></span>
-                                                            <span>Casual User</span>
+                                                            <span>Casual</span>
                                                         </p>
                                                         <p className="truncate text-xs font-bold text-gray-400 ml-4">Increase by</p>
                                                     </div>
@@ -451,7 +451,7 @@ export default function Anonymous() {
                                                     <div className="min-w-0">
                                                         <p className="text-sm/5 font-semibold text-gray-700 flex items-center">
                                                             <span className='w-2 h-2 rounded-full bg-green-500 flex mr-2'></span>
-                                                            <span>Loyal User</span>
+                                                            <span>Loyal</span>
                                                         </p>
                                                         <p className="truncate text-xs font-bold text-gray-400 ml-4">Increase by</p>
                                                     </div>
@@ -463,7 +463,7 @@ export default function Anonymous() {
                                                     <div className="min-w-0">
                                                         <p className="text-sm/5 font-semibold text-gray-700 flex items-center">
                                                             <span className='w-2 h-2 rounded-full bg-purple-500 flex mr-2'></span>
-                                                            <span>Brand User</span>
+                                                            <span>Brand Lover</span>
                                                         </p>
                                                         <p className="truncate text-xs font-bold text-gray-400 ml-4">Decrease by</p>
                                                     </div>

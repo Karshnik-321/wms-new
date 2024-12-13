@@ -64,7 +64,7 @@ import { useState } from 'react'
     },
     {
       name: 'CDP',
-      href: '/cdp/registrations',
+      href: '/cdp/anonymous',
       icon: UserGroupIcon,
       subnav:[
         { name: 'Behaviour', href: '/cdp/anonymous'},

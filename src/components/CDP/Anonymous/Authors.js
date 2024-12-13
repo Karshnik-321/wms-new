@@ -188,7 +188,7 @@ export default function Authors() {
                                 <div className="min-w-full lg:min-w-0 flex-1 mb-4 lg:mb-0 flex items-center">
                                     <img
                                         alt=""
-                                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                        src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                         className="inline-block size-8 rounded-full mr-2"
                                     />
                                     <h2 className="text-2xl/7 font-bold text-gray-900 sm:truncate sm:text-2xl sm:tracking-tight">

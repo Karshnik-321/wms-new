@@ -10,7 +10,7 @@ const navigation = [
   { name: 'Products', href: '/products/astrology/horoscope', icon: CubeIcon, current: false },
   { name: 'Services', href: '/services/notification/campaigns', icon: Cog8ToothIcon, current: false },
   { name: 'AI Hub', href: '/ai-hub/webstories/listing', icon: CpuChipIcon, current: false },
-  { name: 'CDP', href: '/cdp/registrations', icon: UserGroupIcon, current: false },
+  { name: 'CDP', href: '/cdp/anonymous', icon: UserGroupIcon, current: false },
 ]
 export default function Dashboard() {
   return (
